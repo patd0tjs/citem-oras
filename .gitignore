@@ -1,0 +1,18 @@
+# Ignore the writable logs and session folders
+writable/logs/
+writable/session/
+
+# Ignore the environment file (you can uncomment if you need to ignore it)
+# .env
+
+# Ignore system and user-defined cache
+writable/cache/
+
+# Ignore compiled view files
+writable/views/
+
+# Ignore other potential files/folders you don't want to track
+/.vscode/
+/.idea/
+*.log
+*.env
