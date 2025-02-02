@@ -29,7 +29,7 @@ class DTRModel extends Model
         $db = \Config\Database::connect();
     
         $builder = $db->table($this->table);
-        $builder->select("interns.name as name, SEC_TO_TIME(SUM(TIME_TO_SEC(TIMEDIFF(time_out, time_in)))) AS hours");
+        $builder->select("interns.name as name, DATE_FORMAT(SEC_TO_TIME(SUM(TIME_TO_SEC(TIMEDIFF(time_out, time_in)))), '%H:%i') AS hours");
         $builder->join('interns', 'dtr.user_id = interns.id');
         $builder->where("dtr.time_in IS NOT NULL");
         $builder->where("dtr.time_out IS NOT NULL");
@@ -37,5 +37,18 @@ class DTRModel extends Model
     
         $query = $builder->get();
         return $query->getResultArray();
+    }
+
+    public function getMyAccumulatedHours()
+    {
+        $session = session();
+        $db = \Config\Database::connect();
+    
+        $builder = $db->table($this->table);
+        $builder->select("DATE_FORMAT(SEC_TO_TIME(SUM(TIME_TO_SEC(TIMEDIFF(time_out, time_in)))), '%H:%i') AS hours");
+        $builder->where("user_id", $session->intern_id);
+    
+        $query = $builder->get();
+        return $query->getRowArray();
     }
 }

@@ -12,6 +12,7 @@ class LoggerController extends BaseController
     {
         $session = session();
         $dtr = new DTRModel();
+        $hours = $dtr->getMyAccumulatedHours();
 
         $current_date = date('Y-m-d');
         $current_dtr = $dtr->where('date', $current_date)
@@ -20,7 +21,7 @@ class LoggerController extends BaseController
 
         $current_dtr = (array) $current_dtr;
         
-        return view('logger', ['dtr' => $current_dtr, 'intern_name' => $session->intern_name]);
+        return view('logger', ['dtr' => $current_dtr, 'intern_name' => $session->intern_name, 'hours' => $hours]);
     }
 
     public function clockIn()

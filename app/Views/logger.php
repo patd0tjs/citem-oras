@@ -37,6 +37,7 @@
 
                 <?php } ?>
 
+                <p class="text-sm">Accumulated Hours: <strong><?= $hours['hours']?></strong></p>
                 <div class="row mt-5">
                     <div class="col"></div>
                     <div class="col-3">
