@@ -1,0 +1,204 @@
+CRITICAL - 2025-02-02 05:38:39 --> TypeError: date(): Argument #2 ($timestamp) must be of type ?int, string given
+[Method: GET, Route: admin/accumulated]
+in APPPATH\Views\admin\accumulated.php on line 20.
+ 1 APPPATH\Views\admin\accumulated.php(20): date('H:i A', '00:06:00')
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\citem_oras\\app\\Views\\admin\\accumulated.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/accumulated', [], true)
+ 5 APPPATH\Controllers\DTRController.php(31): view('admin/accumulated', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DTRController->accumulatedHoursPage()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DTRController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 05:38:47 --> TypeError: date(): Argument #2 ($timestamp) must be of type ?int, string given
+[Method: GET, Route: admin/accumulated]
+in APPPATH\Views\admin\accumulated.php on line 20.
+ 1 APPPATH\Views\admin\accumulated.php(20): date('H:i', '00:06:00')
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\citem_oras\\app\\Views\\admin\\accumulated.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/accumulated', [], true)
+ 5 APPPATH\Controllers\DTRController.php(31): view('admin/accumulated', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DTRController->accumulatedHoursPage()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DTRController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 05:45:40 --> ErrorException: Undefined variable $decimalTime
+[Method: GET, Route: admin/accumulated]
+in APPPATH\Views\admin\accumulated.php on line 20.
+ 1 APPPATH\Views\admin\accumulated.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $decimalTime', 'C:\\xampp\\htdocs\\citem_oras\\app\\Views\\admin\\accumulated.php', 20)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\citem_oras\\app\\Views\\admin\\accumulated.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/accumulated', [], true)
+ 5 APPPATH\Controllers\DTRController.php(31): view('admin/accumulated', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DTRController->accumulatedHoursPage()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DTRController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 05:45:44 --> ErrorException: Undefined variable $decimalTime
+[Method: GET, Route: admin/accumulated]
+in APPPATH\Views\admin\accumulated.php on line 20.
+ 1 APPPATH\Views\admin\accumulated.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $decimalTime', 'C:\\xampp\\htdocs\\citem_oras\\app\\Views\\admin\\accumulated.php', 20)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\citem_oras\\app\\Views\\admin\\accumulated.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/accumulated', [], true)
+ 5 APPPATH\Controllers\DTRController.php(31): view('admin/accumulated', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DTRController->accumulatedHoursPage()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DTRController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 05:45:48 --> ErrorException: Undefined variable $decimalTime
+[Method: GET, Route: admin/accumulated]
+in APPPATH\Views\admin\accumulated.php on line 20.
+ 1 APPPATH\Views\admin\accumulated.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $decimalTime', 'C:\\xampp\\htdocs\\citem_oras\\app\\Views\\admin\\accumulated.php', 20)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\citem_oras\\app\\Views\\admin\\accumulated.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/accumulated', [], true)
+ 5 APPPATH\Controllers\DTRController.php(31): view('admin/accumulated', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DTRController->accumulatedHoursPage()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DTRController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 05:45:52 --> ErrorException: Undefined variable $decimalTime
+[Method: GET, Route: admin/accumulated]
+in APPPATH\Views\admin\accumulated.php on line 20.
+ 1 APPPATH\Views\admin\accumulated.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $decimalTime', 'C:\\xampp\\htdocs\\citem_oras\\app\\Views\\admin\\accumulated.php', 20)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\citem_oras\\app\\Views\\admin\\accumulated.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/accumulated', [], true)
+ 5 APPPATH\Controllers\DTRController.php(31): view('admin/accumulated', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DTRController->accumulatedHoursPage()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DTRController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-02 05:46:57 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS hours
+FROM `dtr`
+JOIN `interns` ON `dtr`.`user_id` = `interns`.`id`
+WHERE ...' at line 1 in C:\xampp\htdocs\citem_oras\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\citem_oras\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `interns...', 0)
+#1 C:\xampp\htdocs\citem_oras\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `interns...')
+#2 C:\xampp\htdocs\citem_oras\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `interns...')
+#3 C:\xampp\htdocs\citem_oras\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `interns...', Array, false)
+#4 C:\xampp\htdocs\citem_oras\app\Models\DTRModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\citem_oras\app\Controllers\DTRController.php(24): App\Models\DTRModel->getAccumulatedHours()
+#6 C:\xampp\htdocs\citem_oras\system\CodeIgniter.php(933): App\Controllers\DTRController->accumulatedHoursPage()
+#7 C:\xampp\htdocs\citem_oras\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DTRController))
+#8 C:\xampp\htdocs\citem_oras\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\citem_oras\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\citem_oras\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\citem_oras\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-02-02 05:46:58 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS hours
+FROM `dtr`
+JOIN `interns` ON `dtr`.`user_id` = `interns`.`id`
+WHERE ...' at line 1
+[Method: GET, Route: admin/accumulated]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `interns`.`name` as `name`, SUM(TIME_TO_SEC(TIMEDIFF(time_out, time_in))) / AS hours
+FROM `dtr`
+JOIN `interns` ON `dtr`.`user_id` = `interns`.`id`
+WHERE `dtr`.`time_in` IS NOT NULL
+AND `dtr`.`time_out` IS NOT NULL
+GROUP BY `interns`.`id`', [], false)
+ 2 APPPATH\Models\DTRModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\DTRController.php(24): App\Models\DTRModel->getAccumulatedHours()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DTRController->accumulatedHoursPage()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DTRController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 05:46:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS hours
+FROM `dtr`
+JOIN `interns` ON `dtr`.`user_id` = `interns`.`id`
+WHERE ...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `interns`.`name` as `name`, SUM(TIME_TO_SEC(TIMEDIFF(time_out, time_in))) / AS hours
+FROM `dtr`
+JOIN `interns` ON `dtr`.`user_id` = `interns`.`id`
+WHERE `dtr`.`time_in` IS NOT NULL
+AND `dtr`.`time_out` IS NOT NULL
+GROUP BY `interns`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `interns`.`name` as `name`, SUM(TIME_TO_SEC(TIMEDIFF(time_out, time_in))) / AS hours
+FROM `dtr`
+JOIN `interns` ON `dtr`.`user_id` = `interns`.`id`
+WHERE `dtr`.`time_in` IS NOT NULL
+AND `dtr`.`time_out` IS NOT NULL
+GROUP BY `interns`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `interns`.`name` as `name`, SUM(TIME_TO_SEC(TIMEDIFF(time_out, time_in))) / AS hours
+FROM `dtr`
+JOIN `interns` ON `dtr`.`user_id` = `interns`.`id`
+WHERE `dtr`.`time_in` IS NOT NULL
+AND `dtr`.`time_out` IS NOT NULL
+GROUP BY `interns`.`id`', [], false)
+ 4 APPPATH\Models\DTRModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\DTRController.php(24): App\Models\DTRModel->getAccumulatedHours()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DTRController->accumulatedHoursPage()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DTRController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 05:46:58 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS hours
+FROM `dtr`
+JOIN `interns` ON `dtr`.`user_id` = `interns`.`id`
+WHERE ...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `interns`.`name` as `name`, SUM(TIME_TO_SEC(TIMEDIFF(time_out, time_in))) / AS hours
+FROM `dtr`
+JOIN `interns` ON `dtr`.`user_id` = `interns`.`id`
+WHERE `dtr`.`time_in` IS NOT NULL
+AND `dtr`.`time_out` IS NOT NULL
+GROUP BY `interns`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `interns`.`name` as `name`, SUM(TIME_TO_SEC(TIMEDIFF(time_out, time_in))) / AS hours
+FROM `dtr`
+JOIN `interns` ON `dtr`.`user_id` = `interns`.`id`
+WHERE `dtr`.`time_in` IS NOT NULL
+AND `dtr`.`time_out` IS NOT NULL
+GROUP BY `interns`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `interns`.`name` as `name`, SUM(TIME_TO_SEC(TIMEDIFF(time_out, time_in))) / AS hours
+FROM `dtr`
+JOIN `interns` ON `dtr`.`user_id` = `interns`.`id`
+WHERE `dtr`.`time_in` IS NOT NULL
+AND `dtr`.`time_out` IS NOT NULL
+GROUP BY `interns`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `interns`.`name` as `name`, SUM(TIME_TO_SEC(TIMEDIFF(time_out, time_in))) / AS hours
+FROM `dtr`
+JOIN `interns` ON `dtr`.`user_id` = `interns`.`id`
+WHERE `dtr`.`time_in` IS NOT NULL
+AND `dtr`.`time_out` IS NOT NULL
+GROUP BY `interns`.`id`', [], false)
+ 5 APPPATH\Models\DTRModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\DTRController.php(24): App\Models\DTRModel->getAccumulatedHours()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DTRController->accumulatedHoursPage()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DTRController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 05:50:21 --> TypeError: round(): Argument #1 ($num) must be of type int|float, string given
+[Method: GET, Route: admin/accumulated]
+in APPPATH\Views\admin\accumulated.php on line 20.
+ 1 APPPATH\Views\admin\accumulated.php(20): round('00:06:00', 1)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\citem_oras\\app\\Views\\admin\\accumulated.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/accumulated', [], true)
+ 5 APPPATH\Controllers\DTRController.php(31): view('admin/accumulated', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DTRController->accumulatedHoursPage()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DTRController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
