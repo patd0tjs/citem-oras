@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\UserModel;
-use App\Models\InternsModel;
+use App\Models\InternModel;
 
 class UsersController extends BaseController
 {
@@ -16,6 +16,18 @@ class UsersController extends BaseController
         ];
         
         return view('admin/users', $data);
+    }
+
+    public function internsPage()
+    {
+        $users = new InternModel();
+
+        $data = [
+            'page'  => 'Intern Users',
+            'users' => $users->findAll()
+        ];
+        
+        return view('admin/interns', $data);
     }
 
     public function createUser()
@@ -61,10 +73,33 @@ class UsersController extends BaseController
         return redirect()->to('admin/users');
     }
 
-    // public function InternsPage()
-    // {
-    //     $dtr = new InternsModel();
+    public function createIntern()
+    {
+        $intern = new InternModel();
 
-    //     return view('admin/accumulated', $data);
-    // }
+        // image upload
+        $file = $this->request->getFile('img');
+        $img = $intern->uploadIMG($file);
+        if(!$img){
+            return redirect()->back()->with('error', 'There was an error uploading the image');
+        }
+
+        $data = [
+            'username'   => $this->request->getPost('username'),
+            'email'      => $this->request->getPost('email'),
+            'img'        => $img,
+            'pw'         => password_hash($this->request->getPost('pw'), PASSWORD_DEFAULT),
+            'name'       => $this->request->getPost('name'),
+            'school'     => $this->request->getPost('school'),
+            'course'     => $this->request->getPost('course'),
+            'contact'    => $this->request->getPost('contact'),
+            'req_hrs'    => $this->request->getPost('req_hrs'),
+            'department' => $this->request->getPost('department'),
+            'start_date' => $this->request->getPost('start_date'),
+            'end_date'   => $this->request->getPost('end_date')
+        ];
+        
+        $intern->insert($data);
+        return redirect()->to('admin/interns');
+    }
 }

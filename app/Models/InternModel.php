@@ -12,4 +12,23 @@ class InternModel extends Model
         'username', 'email', 'pw', 'img', 'name', 'school', 'course', 
         'req_hrs', 'department', 'start_date', 'end_date','is_active'
     ];
+
+    public function uploadIMG($file)
+    {
+        $validMimeTypes = ['image/jpeg', 'image/png'];
+
+        if (!in_array($file->getMimeType(), $validMimeTypes)) {
+            return false;
+        }
+
+        if ($file->isValid() && !$file->hasMoved()) {
+            $file_name = $file->getRandomName();
+
+            $file->move(base_url() . 'uploads', $file_name);
+            return $file_name;
+
+        } else {
+            return false;
+        }
+    }
 }

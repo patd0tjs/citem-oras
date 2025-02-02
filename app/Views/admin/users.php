@@ -49,7 +49,7 @@
                                                 <input type="email" class="form-control" name="email" value="<?= $user['email']?>" required>
                                             </div>
                                             <div class="mb-3">
-                                                <label class="form-label">New Password</label>
+                                                <label class="form-label">Update Password</label>
                                                 <input type="password" class="form-control" name="pw">
                                             </div>
                                         </div>

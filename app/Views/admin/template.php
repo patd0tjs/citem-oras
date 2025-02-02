@@ -58,7 +58,7 @@
                             </li>
                             <li class="nav-item <?= (in_array($page,['Intern Users', 'Admin Users']) ? 'menu-open' : '')?>">
                                 <a href="#" class="nav-link <?= (in_array($page,['Intern Users', 'Admin Users']) ? 'active' : '')?>">
-                                <i class="nav-icon fas fa-edit"></i>
+                                <i class="nav-icon fas fa-users"></i>
                                 <p>
                                     Accounts
                                     <i class="fas fa-angle-left right"></i>
@@ -66,14 +66,14 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/forms/general.html" class="nav-link <?= ($page =='Intern Users') ? 'active' : ''?>">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <a href="<?= base_url()?>admin/interns" class="nav-link <?= ($page =='Intern Users') ? 'active' : ''?>">
+                                    <i class="fas fa-user nav-icon"></i>
                                     <p>Interns</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="<?= base_url()?>admin/users" class="nav-link <?= ($page =='Admin Users') ? 'active' : ''?>">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="fas fa-user-shield nav-icon"></i>
                                     <p>Admins</p>
                                     </a>
                                 </li>
@@ -104,7 +104,7 @@
 
         </div>
         <script>
-        new DataTable("#datatable", {
+            new DataTable("#datatable", {
                 order: []
             });
         </script>
