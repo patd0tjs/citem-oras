@@ -14,6 +14,9 @@
         <link rel="stylesheet" href="<?= base_url()?>plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
         <link rel="stylesheet" href="<?= base_url()?>plugins/daterangepicker/daterangepicker.css">
         <link rel="stylesheet" href="<?= base_url()?>plugins/summernote/summernote-bs4.min.css">
+
+        <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.2.1/r-3.0.3/sc-2.4.3/datatables.min.css" rel="stylesheet">
+        <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.2.1/r-3.0.3/sc-2.4.3/datatables.min.js"></script>
     </head>
     <body class="hold-transition sidebar-mini layout-fixed">
         <div class="wrapper">
@@ -31,7 +34,7 @@
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                             <li class="nav-item <?= (in_array($page,['Intern Timelogs', 'Accumulated Hours']) ? 'menu-open' : '')?>">
-                                <a href="<?= base_url()?>admin" class="nav-link active">
+                                <a href="<?= base_url()?>admin" class="nav-link <?= (in_array($page,['Intern Timelogs', 'Accumulated Hours']) ? 'active' : '')?>">
                                     <i class="nav-icon fas fa-calendar"></i>
                                     <p>
                                         DTR
@@ -53,8 +56,8 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
+                            <li class="nav-item <?= (in_array($page,['Intern Users', 'Admin Users']) ? 'menu-open' : '')?>">
+                                <a href="#" class="nav-link <?= (in_array($page,['Intern Users', 'Admin Users']) ? 'active' : '')?>">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
                                     Accounts
@@ -63,15 +66,15 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/forms/general.html" class="nav-link">
+                                    <a href="pages/forms/general.html" class="nav-link <?= ($page =='Intern Users') ? 'active' : ''?>">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Interns</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/forms/advanced.html" class="nav-link">
+                                    <a href="<?= base_url()?>admin/users" class="nav-link <?= ($page =='Admin Users') ? 'active' : ''?>">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Admin</p>
+                                    <p>Admins</p>
                                     </a>
                                 </li>
                                 </ul>
@@ -100,6 +103,11 @@
             </div>
 
         </div>
+        <script>
+        new DataTable("#datatable", {
+                order: []
+            });
+        </script>
         <script src="<?= base_url()?>plugins/jquery/jquery.min.js"></script>
         <script src="<?= base_url()?>plugins/jquery-ui/jquery-ui.min.js"></script>
         <script>

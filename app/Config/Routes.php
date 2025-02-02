@@ -19,4 +19,8 @@ $routes->get('admin', 'DTRController::timelogsPage', ['filter' => 'user']);
 $routes->get('admin/login', 'LoginController::loginPage');
 $routes->post('admin/login', 'LoginController::login');
 $routes->get('admin/accumulated', 'DTRController::accumulatedHoursPage', ['filter' => 'user']);
+$routes->get('admin/users', 'UsersController::usersPage', ['filter' => 'user']);
+$routes->get('admin/users/status', 'UsersController::setStatus', ['filter' => 'user']);
+$routes->post('admin/users/new', 'UsersController::createUser', ['filter' => 'user']);
+$routes->post('admin/users/update', 'UsersController::updateUser', ['filter' => 'user']);
 $routes->post('admin/updateTimelog', 'DTRController::updateTimelog', ['filter' => 'user']);
