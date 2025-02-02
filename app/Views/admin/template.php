@@ -24,6 +24,26 @@
                 <img class="animation__shake" src="<?=base_url()?>dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
             </div>
 
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                <!-- Left navbar links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Right navbar links -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="<?= base_url()?>admin/logout" class="nav-link">Logout</a>
+                    </li>
+                </ul>
+            </nav>
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <a href="index3.html" class="brand-link">
                     <img src="<?=base_url()?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">

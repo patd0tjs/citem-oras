@@ -25,9 +25,9 @@
                             <td><?= $user['department']?></td>
                             <td>
                                 <?php if($user['is_active'] == 1){?>
-                                    <a class="btn btn-success" href="<?= base_url()?>admin/users/status?id=<?= $user['id']?>&status=0" role="button">Active</a>
+                                    <a class="btn btn-success" href="<?= base_url()?>admin/interns/status?id=<?= $user['id']?>&status=0" role="button">Active</a>
                                 <?php } else {?>
-                                    <a class="btn btn-secondary" href="<?= base_url()?>admin/users/status?id=<?= $user['id']?>&status=1" role="button">Inctive</a>
+                                    <a class="btn btn-secondary" href="<?= base_url()?>admin/interns/status?id=<?= $user['id']?>&status=1" role="button">Inctive</a>
                                 <?php } ?>
                             </td>
                             <td>
@@ -53,7 +53,7 @@
                                             <div class="mb-3">
                                                 <label class="form-label">Photo</label>
                                                 <br>
-                                                <input type="file" class="form-label" name="img" accept="image/*" required>
+                                                <input type="file" class="form-label" name="img" accept="image/*">
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Name</label>

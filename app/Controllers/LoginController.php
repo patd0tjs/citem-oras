@@ -8,7 +8,7 @@ class LoginController extends BaseController
 {
     public function internLoginPage()
     {
-        // echo password_hash("test", PASSWORD_DEFAULT);
+        session()->destroy();
         return view('login');
     }
 
@@ -50,7 +50,7 @@ class LoginController extends BaseController
 
     public function loginPage()
     {
-        // echo password_hash("test", PASSWORD_DEFAULT);
+        session()->destroy();
         return view('admin/login');
     }
 

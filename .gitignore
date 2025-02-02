@@ -10,7 +10,8 @@ writable/cache/
 
 # Ignore compiled view files
 writable/views/
-public/uploads/
+public/uploads/*
+!public/uploads/index.html
 
 # Ignore other potential files/folders you don't want to track
 /.vscode/

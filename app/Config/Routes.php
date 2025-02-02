@@ -22,7 +22,10 @@ $routes->get('admin/accumulated', 'DTRController::accumulatedHoursPage', ['filte
 $routes->get('admin/users', 'UsersController::usersPage', ['filter' => 'user']);
 $routes->get('admin/interns', 'UsersController::internsPage', ['filter' => 'user']);
 $routes->post('admin/interns/new', 'UsersController::createIntern', ['filter' => 'user']);
-$routes->get('admin/users/status', 'UsersController::setStatus', ['filter' => 'user']);
+$routes->post('admin/interns/update', 'UsersController::updateIntern', ['filter' => 'user']);
+$routes->get('admin/users/status', 'UsersController::userStatus', ['filter' => 'user']);
+$routes->get('admin/interns/status', 'UsersController::internStatus', ['filter' => 'user']);
 $routes->post('admin/users/new', 'UsersController::createUser', ['filter' => 'user']);
 $routes->post('admin/users/update', 'UsersController::updateUser', ['filter' => 'user']);
 $routes->post('admin/updateTimelog', 'DTRController::updateTimelog', ['filter' => 'user']);
+$routes->get('admin/logout', 'LoginController::logout', ['filter' => 'user']);

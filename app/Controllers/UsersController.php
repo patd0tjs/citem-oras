@@ -62,7 +62,7 @@ class UsersController extends BaseController
         return redirect()->to('admin/users');
     }
 
-    public function setStatus()
+    public function userStatus()
     {
         $users = new UserModel();
 
@@ -100,6 +100,57 @@ class UsersController extends BaseController
         ];
         
         $intern->insert($data);
+        return redirect()->to('admin/interns');
+    }
+
+    public function updateIntern()
+    {
+        $intern = new InternModel();
+
+        $data = [
+            'username'   => $this->request->getPost('username'),
+            'email'      => $this->request->getPost('email'),
+            'name'       => $this->request->getPost('name'),
+            'school'     => $this->request->getPost('school'),
+            'course'     => $this->request->getPost('course'),
+            'contact'    => $this->request->getPost('contact'),
+            'req_hrs'    => $this->request->getPost('req_hrs'),
+            'department' => $this->request->getPost('department'),
+            'start_date' => $this->request->getPost('start_date'),
+            'end_date'   => $this->request->getPost('end_date')
+        ];
+
+        // image upload
+        $file = $this->request->getFile('img');
+        if($file->isValid()){
+            $img = $intern->uploadIMG($file);
+            if(!$img){
+                return redirect()->back()->with('error', 'There was an error uploading the image');
+            } else {
+                $data['img'] = $img;
+            }
+        }
+
+        if($this->request->getPost('pw'))
+        {
+            $data['pw'] = password_hash($this->request->getPost('pw'), PASSWORD_DEFAULT);
+        }
+        
+        $intern->where('id', $this->request->getPost('id'))
+               ->set($data)
+               ->update();
+
+        return redirect()->to('admin/interns');
+    }
+
+    public function internStatus()
+    {
+        $intern = new InternModel();
+
+        $intern->where('id', $this->request->getGet('id'))
+              ->set(['is_active' => $this->request->getGet('status')])
+              ->update();
+
         return redirect()->to('admin/interns');
     }
 }

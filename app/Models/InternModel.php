@@ -9,7 +9,7 @@ class InternModel extends Model
     protected $table = 'interns';
     protected $primaryKey = 'id';
     protected $allowedFields = [
-        'username', 'email', 'pw', 'img', 'name', 'school', 'course', 
+        'username', 'email', 'pw', 'contact', 'img', 'name', 'school', 'course', 
         'req_hrs', 'department', 'start_date', 'end_date','is_active'
     ];
 
@@ -24,7 +24,7 @@ class InternModel extends Model
         if ($file->isValid() && !$file->hasMoved()) {
             $file_name = $file->getRandomName();
 
-            $file->move(base_url() . 'uploads', $file_name);
+            $file->move(FCPATH . 'uploads', $file_name);
             return $file_name;
 
         } else {
