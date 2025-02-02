@@ -1,0 +1,41 @@
+<?php
+
+namespace App\Models;
+
+use CodeIgniter\Model;
+
+class DTRModel extends Model
+{
+    protected $table = 'dtr';
+    protected $primaryKey = 'id';
+    protected $allowedFields = [
+        'user_id', 'date', 'time_in', 'time_out', 'task'
+    ];
+
+    public function getTimelogs()
+    {
+        $db      = \Config\Database::connect();
+
+        $builder = $db->table($this->table);
+        $builder->select('dtr.id as id, interns.name as name, date, time_in, time_out, task, interns.is_active as is_active');
+        $builder->join('interns', 'dtr.user_id = interns.id');
+        $query = $builder->orderBy('id', 'desc')->get()->getResultArray();
+
+        return $query;
+    }
+
+    public function getAccumulatedHours()
+    {
+        $db = \Config\Database::connect();
+    
+        $builder = $db->table($this->table);
+        $builder->select("interns.name as name, SEC_TO_TIME(SUM(TIME_TO_SEC(TIMEDIFF(time_out, time_in)))) AS hours");
+        $builder->join('interns', 'dtr.user_id = interns.id');
+        $builder->where("dtr.time_in IS NOT NULL");
+        $builder->where("dtr.time_out IS NOT NULL");
+        $builder->groupBy('interns.id');
+    
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
+}
