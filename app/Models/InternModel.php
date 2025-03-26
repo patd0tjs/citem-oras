@@ -9,7 +9,7 @@ class InternModel extends Model
     protected $table = 'interns';
     protected $primaryKey = 'id';
     protected $allowedFields = [
-        'username', 'email', 'pw', 'contact', 'img', 'name', 'school', 'course', 
+        'username', 'email', 'pw', 'contact', 'img', 'name', 'school_id', 'course', 
         'req_hrs', 'department', 'start_date', 'end_date','is_active'
     ];
 
@@ -30,5 +30,17 @@ class InternModel extends Model
         } else {
             return false;
         }
+    }
+
+    public function getLedgerDetails()
+    {
+        $db = \Config\Database::connect();
+    
+        $builder = $db->table($this->table);
+        $builder->select("interns.id as id, interns.name as name, schools.name as school, department, is_active");
+        $builder->join('schools', 'interns.school_id = schools.id');
+    
+        $query = $builder->get();
+        return $query->getResultArray();
     }
 }

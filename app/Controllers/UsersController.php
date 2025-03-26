@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use App\Models\UserModel;
 use App\Models\InternModel;
+use App\Models\SchoolModel;
 
 class UsersController extends BaseController
 {
@@ -21,10 +22,13 @@ class UsersController extends BaseController
     public function internsPage()
     {
         $users = new InternModel();
+        $schools = new SchoolModel();
 
         $data = [
             'page'  => 'Intern Users',
-            'users' => $users->findAll()
+            'schools' => $schools->findAll(),
+            'users' => $users->findAll(),
+            'ledger_details' => $users->getLedgerDetails()
         ];
         
         return view('admin/interns', $data);
@@ -90,7 +94,7 @@ class UsersController extends BaseController
             'img'        => $img,
             'pw'         => password_hash($this->request->getPost('pw'), PASSWORD_DEFAULT),
             'name'       => $this->request->getPost('name'),
-            'school'     => $this->request->getPost('school'),
+            'school_id'  => $this->request->getPost('school_id'),
             'course'     => $this->request->getPost('course'),
             'contact'    => $this->request->getPost('contact'),
             'req_hrs'    => $this->request->getPost('req_hrs'),
@@ -111,7 +115,7 @@ class UsersController extends BaseController
             'username'   => $this->request->getPost('username'),
             'email'      => $this->request->getPost('email'),
             'name'       => $this->request->getPost('name'),
-            'school'     => $this->request->getPost('school'),
+            'school_id'  => $this->request->getPost('school_id'),
             'course'     => $this->request->getPost('course'),
             'contact'    => $this->request->getPost('contact'),
             'req_hrs'    => $this->request->getPost('req_hrs'),
