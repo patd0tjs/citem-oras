@@ -74,6 +74,12 @@
                                             <p>Accumulated Hours</p>
                                         </a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a href="<?= base_url()?>admin/schools" class="nav-link <?= ($page =='Schools') ? 'active' : ''?>">
+                                            <i class="fas fa-graduation-cap nav-icon"></i>
+                                            <p>Schools</p>
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="nav-item <?= (in_array($page,['Intern Users', 'Admin Users']) ? 'menu-open' : '')?>">
