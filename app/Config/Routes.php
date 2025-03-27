@@ -28,4 +28,7 @@ $routes->get('admin/interns/status', 'UsersController::internStatus', ['filter' 
 $routes->post('admin/users/new', 'UsersController::createUser', ['filter' => 'user']);
 $routes->post('admin/users/update', 'UsersController::updateUser', ['filter' => 'user']);
 $routes->post('admin/updateTimelog', 'DTRController::updateTimelog', ['filter' => 'user']);
+$routes->get('admin/schools', 'SchoolsController::index', ['filter' => 'user']);
+$routes->post('admin/schools/create', 'SchoolsController::create', ['filter' => 'user']);
+$routes->post('admin/schools/update', 'SchoolsController::update', ['filter' => 'user']);
 $routes->get('admin/logout', 'LoginController::logout', ['filter' => 'user']);

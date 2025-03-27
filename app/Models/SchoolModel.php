@@ -8,4 +8,5 @@ class SchoolModel extends Model
 {
     protected $table = 'schools';
     protected $primaryKey = 'id';
+    protected $allowedFields = ['name'];
 }
