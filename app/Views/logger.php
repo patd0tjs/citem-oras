@@ -13,13 +13,18 @@
             <div class="container-fluid p-5 mt-5 text-center rounded" id="form_shadow">
                 <h5 class="mb-4">ORAS</h5>
                 <h1 class="mb-5"><span id="clock"></span></h1>
+
                 <h5>Welcome,</h5>
                 <h4><strong><?= $intern_name?></strong></h4>
 
-                <?php if (empty($dtr['time_in']) || empty($dtr['time_out'])){?>
+                <?php if (!empty($dtr['time_in'])) { ?>
+                    <h5>Time In: <strong><?= date('h:i A', strtotime($dtr['time_in'])) ?></strong></h5>
+                <?php } ?>
+
+                <?php if (empty($dtr['time_in']) || empty($dtr['time_out'])) { ?>
 
                     <form class="mt-5" action="<?= base_url()?>logger/<?= (empty($dtr['time_in'])) ? 'time_in' : 'time_out'?>" method="post">
-                        <?php if(empty($dtr['time_in'])){?>
+                        <?php if(empty($dtr['time_in'])) { ?>
                             <input type="submit" class="btn btn-success" value="Time In">
                         <?php } else { ?> 
                             <div class="form-group">
@@ -29,10 +34,10 @@
                         <?php } ?>
                     </form>
 
-                <?php } else {?>
+                <?php } else { ?>
 
                     <div class="alert alert-danger mt-3" role="alert">
-                        <p class="mb-0">You have clocked out for today, <br>  please come back again tomorrow</p>
+                        <p class="mb-0">Please clock in on your next work day!</p>
                     </div>
 
                 <?php } ?>

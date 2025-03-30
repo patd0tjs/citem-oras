@@ -23,7 +23,7 @@
                                 <?php if($user['is_active'] == 1){?>
                                     <a class="btn btn-success" href="<?= base_url()?>admin/users/status?id=<?= $user['id']?>&status=0" role="button">Active</a>
                                 <?php } else {?>
-                                    <a class="btn btn-secondary" href="<?= base_url()?>admin/users/status?id=<?= $user['id']?>&status=1" role="button">Inctive</a>
+                                    <a class="btn btn-secondary" href="<?= base_url()?>admin/users/status?id=<?= $user['id']?>&status=1" role="button">Inactive</a>
                                 <?php } ?>
                             </td>
                             <td>
