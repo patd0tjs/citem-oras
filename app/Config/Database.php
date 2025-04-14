@@ -9,6 +9,44 @@ use CodeIgniter\Database\Config;
  */
 class Database extends Config
 {
+    public function __construct()
+    {
+        parent::__construct();
+
+        // Ensure that we always set the database group to 'tests' if
+        // we are currently running an automated test suite, so that
+        // we don't overwrite live data on accident.
+        if (ENVIRONMENT === 'testing') {
+            $this->defaultGroup = 'tests';
+        }
+
+        $this->default = [
+            'DSN'          => '',
+            'hostname'     => getenv('database.default.hostname') ?: 'localhost',
+            'username'     => getenv('database.default.username') ?: 'root',
+            'password'     => getenv('database.default.password') ?: '',
+            'database'     => getenv('database.default.database') ?: 'oras',
+            'DBDriver'     => getenv('database.default.DBDriver') ?: 'MySQLi',
+            'DBPrefix'     => '',
+            'pConnect'     => false,
+            'DBDebug'      => true,
+            'charset'      => 'utf8mb4',
+            'DBCollat'     => 'utf8mb4_general_ci',
+            'swapPre'      => '',
+            'encrypt'      => false,
+            'compress'     => false,
+            'strictOn'     => false,
+            'failover'     => [],
+            'port'         => getenv('database.default.port') ?: 3306,
+            'numberNative' => false,
+            'dateFormat'   => [
+                'date'     => 'Y-m-d',
+                'datetime' => 'Y-m-d H:i:s',
+                'time'     => 'H:i:s',
+            ],
+        ];
+    }
+
     /**
      * The directory that holds the Migrations and Seeds directories.
      */
@@ -24,31 +62,8 @@ class Database extends Config
      *
      * @var array<string, mixed>
      */
-    public array $default = [
-        'DSN'          => '',
-        'hostname'     => 'localhost',
-        'username'     => 'root',
-        'password'     => '',
-        'database'     => 'oras',
-        'DBDriver'     => 'MySQLi',
-        'DBPrefix'     => '',
-        'pConnect'     => false,
-        'DBDebug'      => true,
-        'charset'      => 'utf8mb4',
-        'DBCollat'     => 'utf8mb4_general_ci',
-        'swapPre'      => '',
-        'encrypt'      => false,
-        'compress'     => false,
-        'strictOn'     => false,
-        'failover'     => [],
-        'port'         => 3306,
-        'numberNative' => false,
-        'dateFormat'   => [
-            'date'     => 'Y-m-d',
-            'datetime' => 'Y-m-d H:i:s',
-            'time'     => 'H:i:s',
-        ],
-    ];
+
+    public array $default = [];
 
     //    /**
     //     * Sample database connection for SQLite3.
@@ -186,16 +201,4 @@ class Database extends Config
             'time'     => 'H:i:s',
         ],
     ];
-
-    public function __construct()
-    {
-        parent::__construct();
-
-        // Ensure that we always set the database group to 'tests' if
-        // we are currently running an automated test suite, so that
-        // we don't overwrite live data on accident.
-        if (ENVIRONMENT === 'testing') {
-            $this->defaultGroup = 'tests';
-        }
-    }
 }
