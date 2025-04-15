@@ -18,7 +18,7 @@
                     <?php foreach($timelogs as $log):?>
                         <tr>
                             <td><?= $log['name']?></td>
-                            <td><?= $log['date']?></td>
+                            <td data-toggle="tooltip" data-placement="top" title="Last edited by: <?=$log['editor']?>"><?= $log['date']?></td>
                             <td><?= $log['time_in']?></td>
                             <td><?= $log['time_out']?></td>
                             <td><?= $log['task']?></td>

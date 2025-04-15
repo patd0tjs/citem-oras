@@ -9,7 +9,7 @@ class DTRModel extends Model
     protected $table = 'dtr';
     protected $primaryKey = 'id';
     protected $allowedFields = [
-        'user_id', 'date', 'time_in', 'time_out', 'task'
+        'user_id', 'date', 'time_in', 'time_out', 'task', 'last_updated_by'
     ];
 
     public function getTimelogs()
@@ -17,8 +17,10 @@ class DTRModel extends Model
         $db      = \Config\Database::connect();
 
         $builder = $db->table($this->table);
-        $builder->select('dtr.id as id, interns.name as name, date, time_in, time_out, task, interns.is_active as is_active');
-        $builder->join('interns', 'dtr.user_id = interns.id')->orderBy('interns.is_active', 'desc');
+        $builder->select('dtr.id as id, interns.name as name, date, time_in, time_out, task, interns.is_active as is_active, users.name as editor');
+        $builder->join('interns', 'dtr.user_id = interns.id');
+        $builder->join('users', 'dtr.last_updated_by = users.id', 'left');
+        $builder->orderBy('interns.is_active', 'desc');
         $query = $builder->orderBy('id', 'desc')->get()->getResultArray();
 
         return $query;

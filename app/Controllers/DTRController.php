@@ -36,8 +36,9 @@ class DTRController extends BaseController
         $dtr = new DTRModel();
 
         $updates = [
-            'time_in'  => $this->request->getPost('time_in'),
-            'time_out' => $this->request->getPost('time_out')
+            'time_in'         => $this->request->getPost('time_in'),
+            'time_out'        => $this->request->getPost('time_out'),
+            'last_updated_by' => session()->get('user_id')
         ];
 
         $dtr->where('id', $this->request->getPost('id'))
