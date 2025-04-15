@@ -104,7 +104,8 @@ class UsersController extends BaseController
             'req_hrs'    => $this->request->getPost('req_hrs'),
             'department' => $this->request->getPost('department'),
             'start_date' => $this->request->getPost('start_date'),
-            'end_date'   => $this->request->getPost('end_date')
+            'end_date'   => $this->request->getPost('end_date'),
+            'link'       => substr(bin2hex(random_bytes(5)), 0, 10)
         ];
         
         $intern->insert($data);

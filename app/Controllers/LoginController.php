@@ -91,4 +91,26 @@ class LoginController extends BaseController
         return redirect()->to('admin');
     }
 
+    public function oc($link)
+    {
+        $intern = new InternModel();
+            
+        $current_intern = $intern->where('link', $link)
+                             ->where('is_active', 1)
+                             ->first();
+
+        if ($current_intern) {
+            $session = session();
+            $sessionData = [
+                'intern_id'   => $current_intern['id'],
+                'intern_name' => $current_intern['name']
+            ];
+            $session->set($sessionData);
+            
+            return redirect()->to('/');
+
+        } else {
+            return redirect()->back()->with('error', 'Invalid user.');
+        }
+    }
 }

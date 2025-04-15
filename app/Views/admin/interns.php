@@ -19,6 +19,7 @@
                         <th>Department</th>
                         <th>Status</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,6 +38,9 @@
                                 <?php } else {?>
                                     <a class="btn btn-secondary" href="<?= base_url()?>admin/interns/status?id=<?= $ledger_detail['id']?>&status=1" role="button">Inctive</a>
                                 <?php } ?>
+                            </td>
+                            <td>
+                                <button class="btn btn-primary" onclick="copyToClipboard(`<?= base_url()?>oc/<?=$ledger_detail['link']?>`)">Get Link</button>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-warning mb-3" data-toggle="modal" data-target="#edit<?=$ledger_detail['id']?>">
@@ -205,4 +209,12 @@
             </div>
         </div>
     <?php endforeach;?>
+
+    <script>
+        function copyToClipboard(link) {
+            navigator.clipboard.writeText(link)
+            .then(() => alert("Link copied!"))
+            .catch(err => alert("Failed to copy: " + err));
+        }
+    </script>
 <?= $this->endSection() ?>

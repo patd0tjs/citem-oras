@@ -9,6 +9,7 @@ use CodeIgniter\Router\RouteCollection;
 // intern routes
 $routes->get('/', 'LoggerController::index', ['filter' => 'intern']);
 $routes->get('/login', 'LoginController::internLoginPage');
+$routes->get('/oc/(:segment)', 'LoginController::oc/$1');
 $routes->post('/login', 'LoginController::internLogin');
 $routes->post('/logger/time_in', 'LoggerController::clockIn', ['filter' => 'intern']);
 $routes->post('/logger/time_out', 'LoggerController::clockOut', ['filter' => 'intern']);
