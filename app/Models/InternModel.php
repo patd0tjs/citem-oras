@@ -38,7 +38,7 @@ class InternModel extends Model
     
         $builder = $db->table($this->table);
         $builder->select("interns.id as id, interns.name as name, schools.name as school, department, is_active");
-        $builder->join('schools', 'interns.school_id = schools.id');
+        $builder->join('schools', 'interns.school_id = schools.id')->orderBy('is_active', 'DESC');
     
         $query = $builder->get();
         return $query->getResultArray();

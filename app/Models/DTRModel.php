@@ -18,7 +18,7 @@ class DTRModel extends Model
 
         $builder = $db->table($this->table);
         $builder->select('dtr.id as id, interns.name as name, date, time_in, time_out, task, interns.is_active as is_active');
-        $builder->join('interns', 'dtr.user_id = interns.id');
+        $builder->join('interns', 'dtr.user_id = interns.id')->orderBy('interns.is_active', 'desc');
         $query = $builder->orderBy('id', 'desc')->get()->getResultArray();
 
         return $query;
@@ -33,7 +33,7 @@ class DTRModel extends Model
         $builder->join('interns', 'dtr.user_id = interns.id');
         $builder->where("dtr.time_in IS NOT NULL");
         $builder->where("dtr.time_out IS NOT NULL");
-        $builder->groupBy('interns.id');
+        $builder->groupBy('interns.id')->orderBy('interns.is_active', 'desc');
     
         $query = $builder->get();
         return $query->getResultArray();

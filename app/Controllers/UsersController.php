@@ -27,7 +27,7 @@ class UsersController extends BaseController
         $data = [
             'page'  => 'Intern Users',
             'schools' => $schools->findAll(),
-            'users' => $users->findAll(),
+            'users' => $users->orderby('is_active', 'DESC')->findAll(),
             'ledger_details' => $users->getLedgerDetails()
         ];
         
