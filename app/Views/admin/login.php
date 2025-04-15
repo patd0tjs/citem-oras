@@ -8,7 +8,22 @@
         <link rel="stylesheet" href="<?= base_url()?>form_shadow.css">
         <title>Admin Login | ORAS</title>
     </head>
+    <style>
+        .flash-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1050; /* Higher than most elements */
+            min-width: 250px;
+        }
+    </style>
     <body>
+        <?php if (session()->getFlashdata('error')): ?>
+            <div class="alert alert-danger alert-dismissible fade show flash-message" role="alert">
+                <?= session()->getFlashdata('error') ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php endif; ?>
         <div class="container p-5">
             <div class="container-fluid p-5 mt-5 text-center rounded" id="form_shadow">
                 <h5 class="mb-5">ORAS Admin Login</h5>
