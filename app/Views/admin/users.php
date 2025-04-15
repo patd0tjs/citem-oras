@@ -10,6 +10,7 @@
             <table id="datatable" class="table table-striped text-center" style="width:100%">
                 <thead>
                     <tr>
+                        <th>Name</th>
                         <th>Email</th>
                         <th>Status</th>
                         <th></th>
@@ -18,6 +19,7 @@
                 <tbody>
                     <?php foreach($users as $user):?>
                         <tr>
+                            <td><?= $user['name']?></td>
                             <td><?= $user['email']?></td>
                             <td>
                                 <?php if($user['is_active'] == 1){?>
@@ -44,6 +46,10 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label class="form-label">Name</label>
+                                                <input type="text" class="form-control" name="name" value="<?= $user['name']?>" required>
+                                            </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Email</label>
                                                 <input type="email" class="form-control" name="email" value="<?= $user['email']?>" required>
@@ -81,11 +87,15 @@
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label class="form-label">Email</label>
+                            <label class="form-label">Name *</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email *</label>
                             <input type="email" class="form-control" name="email" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Password</label>
+                            <label class="form-label">Password *</label>
                             <input type="password" class="form-control" name="pw" required>
                         </div>
                     </div>

@@ -38,7 +38,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="mb-3">
-                                                <label class="form-label">Name</label>
+                                                <label class="form-label">Name *</label>
                                                 <input type="text" class="form-control" name="name" value="<?= $school['name']?>" required>
                                             </div>
                                         </div>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label class="form-label">Name</label>
+                            <label class="form-label">Name *</label>
                             <input type="text" class="form-control" name="name" required>
                         </div>
                     </div>

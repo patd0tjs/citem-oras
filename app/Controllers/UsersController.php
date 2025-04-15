@@ -40,6 +40,7 @@ class UsersController extends BaseController
 
         $data = [
             'email' => $this->request->getPost('email'),
+            'name'  => $this->request->getPost('name'),
             'pw'    => password_hash($this->request->getPost('pw'), PASSWORD_DEFAULT)
         ];
 
@@ -52,7 +53,10 @@ class UsersController extends BaseController
     {
         $users = new UserModel();
 
-        $data['email'] = $this->request->getPost('email');
+        $data = [
+            'email' => $this->request->getPost('email'),
+            'name'  => $this->request->getPost('name')
+        ];
 
         if($this->request->getPost('pw'))
         {

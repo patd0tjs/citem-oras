@@ -55,16 +55,16 @@
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label class="form-label">Photo</label>
+                            <label class="form-label">Photo *</label>
                             <br>
                             <input type="file" class="form-label" name="img" accept="image/*" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Name</label>
+                            <label class="form-label">Name *</label>
                             <input type="text" class="form-control" name="name" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">School</label>
+                            <label class="form-label">School *</label>
                             <select name="school_id" class="form-control" required>
                                 <option value="" selected hidden disabled>Select a School</option>
                                 <?php foreach($schools as $school):?>
@@ -73,39 +73,39 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Course</label>
+                            <label class="form-label">Course *</label>
                             <input type="text" class="form-control" name="course" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Email</label>
+                            <label class="form-label">Email *</label>
                             <input type="email" class="form-control" name="email" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Contact</label>
+                            <label class="form-label">Contact *</label>
                             <input type="text" class="form-control" name="contact" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Required Hours</label>
+                            <label class="form-label">Required Hours *</label>
                             <input type="number" class="form-control" name="req_hrs" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Department</label>
+                            <label class="form-label">Department *</label>
                             <input type="text" class="form-control" name="department" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Start Date</label>
+                            <label class="form-label">Start Date *</label>
                             <input type="date" class="form-control" name="start_date" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">End Date</label>
+                            <label class="form-label">End Date *</label>
                             <input type="date" class="form-control" name="end_date" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Username</label>
+                            <label class="form-label">Username *</label>
                             <input type="username" class="form-control" name="username" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Create Password</label>
+                            <label class="form-label">Create Password *</label>
                             <input type="password" class="form-control" name="pw" required>
                         </div>
                     </div>
@@ -138,11 +138,11 @@
                                 <input type="file" class="form-label" name="img" accept="image/*">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Name</label>
+                                <label class="form-label">Name *</label>
                                 <input type="text" class="form-control" name="name" value="<?= $user['name']?>" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">School</label>
+                                <label class="form-label">School *</label>
                                 <select name="school_id" class="form-control" required>
                                     <option value="" selected hidden disabled>Select a School</option>
                                     <?php foreach($schools as $school):?>
@@ -151,35 +151,35 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Course</label>
+                                <label class="form-label">Course *</label>
                                 <input type="text" class="form-control" name="course" value="<?= $user['course']?>" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Email</label>
+                                <label class="form-label">Email *</label>
                                 <input type="email" class="form-control" name="email" value="<?= $user['email']?>" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Contact</label>
+                                <label class="form-label">Contact *</label>
                                 <input type="text" class="form-control" name="contact" value="<?= $user['contact']?>" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Required Hours</label>
+                                <label class="form-label">Required Hours *</label>
                                 <input type="number" class="form-control" name="req_hrs" value="<?= $user['req_hrs']?>" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Department</label>
+                                <label class="form-label">Department *</label>
                                 <input type="text" class="form-control" name="department" value="<?= $user['department']?>" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Start Date</label>
+                                <label class="form-label">Start Date *</label>
                                 <input type="date" class="form-control" name="start_date" value="<?= $user['start_date']?>" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">End Date</label>
+                                <label class="form-label">End Date *</label>
                                 <input type="date" class="form-control" name="end_date" value="<?= $user['end_date']?>" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Username</label>
+                                <label class="form-label">Username *</label>
                                 <input type="username" class="form-control" name="username" value="<?= $user['username']?>" required>
                             </div>
                             <div class="mb-3">

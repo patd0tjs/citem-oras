@@ -70,7 +70,8 @@ class LoginController extends BaseController
                 
                 $session = session();
                 $sessionData = [
-                    'user_id'   => $current_user['id']
+                    'user_id' => $current_user['id'],
+                    'name'    =>  $current_user['name'],
                 ];
                 $session->set($sessionData);
 

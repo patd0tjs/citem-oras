@@ -45,9 +45,9 @@
                 </ul>
             </nav>
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
-                <a href="index3.html" class="brand-link">
+                <a href="" class="brand-link" disabled>
                     <img src="<?=base_url()?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                    <span class="brand-text font-weight-light">Citem ORAS</span>
+                    <span class="brand-text font-weight-light"><?= ucfirst(session()->get('name'))?></span>
                 </a>
 
                 <div class="sidebar">
@@ -74,13 +74,13 @@
                                             <p>Accumulated Hours</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="<?= base_url()?>admin/schools" class="nav-link <?= ($page =='Schools') ? 'active' : ''?>">
-                                            <i class="fas fa-graduation-cap nav-icon"></i>
-                                            <p>Schools</p>
-                                        </a>
-                                    </li>
                                 </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= base_url()?>admin/schools" class="nav-link <?= ($page =='Schools') ? 'active' : ''?>">
+                                    <i class="fas fa-graduation-cap nav-icon"></i>
+                                    <p>Schools</p>
+                                </a>
                             </li>
                             <li class="nav-item <?= (in_array($page,['Intern Users', 'Admin Users']) ? 'menu-open' : '')?>">
                                 <a href="#" class="nav-link <?= (in_array($page,['Intern Users', 'Admin Users']) ? 'active' : '')?>">
