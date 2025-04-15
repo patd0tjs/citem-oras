@@ -37,8 +37,9 @@ class InternModel extends Model
         $db = \Config\Database::connect();
     
         $builder = $db->table($this->table);
-        $builder->select("interns.id as id, interns.name as name, schools.name as school, department, is_active");
-        $builder->join('schools', 'interns.school_id = schools.id')->orderBy('is_active', 'DESC');
+        $builder->select("interns.id as id, interns.name as name, schools.name as school, interns.start_date as start_date, interns.req_hrs as total_hours, ROUND(SUM(TIME_TO_SEC(TIMEDIFF(dtr.time_out, dtr.time_in))) / 3600, 2) AS rendered_hours, department, is_active");
+        $builder->join('schools', 'interns.school_id = schools.id');
+        $builder->join('dtr', 'interns.id = dtr.user_id')->orderBy('is_active', 'DESC');
     
         $query = $builder->get();
         return $query->getResultArray();
