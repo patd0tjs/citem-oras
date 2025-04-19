@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2025 at 12:58 AM
+-- Generation Time: Apr 19, 2025 at 08:16 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,7 +35,9 @@ CREATE TABLE `dtr` (
   `time_out` time DEFAULT NULL,
   `task` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `last_updated_by` smallint(5) UNSIGNED DEFAULT NULL,
+  `draft` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -60,15 +62,9 @@ CREATE TABLE `interns` (
   `end_date` date NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT 1,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `link` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `interns`
---
-
-INSERT INTO `interns` (`id`, `username`, `email`, `pw`, `img`, `name`, `school_id`, `course`, `contact`, `req_hrs`, `department`, `start_date`, `end_date`, `is_active`, `created_at`, `updated_at`) VALUES
-(8, 'fghjkbdfg', 'dfgs@dfghrs.com', '$2y$10$wzraTFxw9uZVGYV57lueB.WMRz3i523.j2G9dg89fakWru4c/jrR2', '1742988849_d967cbc5f2471b1be83f.png', 'dfghs', 1, 'dsfg', '4563', 567, 'ghr', '2025-03-26', '2025-03-26', 1, '2025-03-26 11:34:09', '2025-03-26 11:39:11');
 
 -- --------------------------------------------------------
 
@@ -80,14 +76,6 @@ CREATE TABLE `schools` (
   `id` smallint(5) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `schools`
---
-
-INSERT INTO `schools` (`id`, `name`) VALUES
-(1, 'harrel porned'),
-(2, 'saint jerome');
 
 -- --------------------------------------------------------
 
@@ -101,16 +89,17 @@ CREATE TABLE `users` (
   `pw` varchar(255) NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT 1,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `pw`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'yeye@aguilar.com', '$2y$10$aAf2CwFp5MCimrs3gfHNXOgV0aE0kHNEcH0ksigRKZ88Ue75pdwxe', 1, '2025-02-01 08:51:18', '2025-02-04 09:55:27'),
-(2, 'yeye@balanza.com', '$2y$10$yLzYO1qOTscZChnNvqnWTe1eKyZhPKRuTwSfCfxW/O6XIpCnP9Rc.', 1, '2025-02-02 07:29:13', '2025-02-02 07:53:23');
+INSERT INTO `users` (`id`, `email`, `pw`, `is_active`, `created_at`, `updated_at`, `name`) VALUES
+(1, 'yeye@aguilar.com', '$2y$10$aAf2CwFp5MCimrs3gfHNXOgV0aE0kHNEcH0ksigRKZ88Ue75pdwxe', 1, '2025-02-01 08:51:18', '2025-04-15 02:32:44', 'yeye bonel'),
+(2, 'yeye@balanza.com', '$2y$10$yLzYO1qOTscZChnNvqnWTe1eKyZhPKRuTwSfCfxW/O6XIpCnP9Rc.', 1, '2025-02-02 07:29:13', '2025-04-15 01:56:29', 'julez');
 
 --
 -- Indexes for dumped tables
@@ -121,7 +110,8 @@ INSERT INTO `users` (`id`, `email`, `pw`, `is_active`, `created_at`, `updated_at
 --
 ALTER TABLE `dtr`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `dtr_ibfk_1` (`user_id`);
+  ADD KEY `dtr_ibfk_1` (`user_id`),
+  ADD KEY `last_updated_by` (`last_updated_by`);
 
 --
 -- Indexes for table `interns`
@@ -160,13 +150,13 @@ ALTER TABLE `dtr`
 -- AUTO_INCREMENT for table `interns`
 --
 ALTER TABLE `interns`
-  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `schools`
 --
 ALTER TABLE `schools`
-  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -182,7 +172,8 @@ ALTER TABLE `users`
 -- Constraints for table `dtr`
 --
 ALTER TABLE `dtr`
-  ADD CONSTRAINT `dtr_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `interns` (`id`);
+  ADD CONSTRAINT `dtr_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `interns` (`id`),
+  ADD CONSTRAINT `dtr_ibfk_2` FOREIGN KEY (`last_updated_by`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `interns`
