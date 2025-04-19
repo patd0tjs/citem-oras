@@ -14,7 +14,7 @@
                     <?php foreach($hours as $hour):?>
                         <tr>
                             <td><?= $hour['name']?></td>
-                            <td><?= $hour['hours']?></td>
+                            <td><?= $hour['hours'] - $hour['dtr_count']?></td>
                         </tr>    
                     <?php endforeach?>
                 </tbody>

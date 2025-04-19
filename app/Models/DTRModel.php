@@ -31,7 +31,7 @@ class DTRModel extends Model
         $db = \Config\Database::connect();
     
         $builder = $db->table($this->table);
-        $builder->select("interns.name as name, DATE_FORMAT(SEC_TO_TIME(SUM(TIME_TO_SEC(TIMEDIFF(time_out, time_in)))), '%H:%i') AS hours");
+        $builder->select("interns.name as name, CAST(SUM(TIME_TO_SEC(TIMEDIFF(time_out, time_in))) / 3600 AS DECIMAL(10,2)) AS hours, count(dtr.time_out) as dtr_count");
         $builder->join('interns', 'dtr.user_id = interns.id');
         $builder->where("dtr.time_in IS NOT NULL");
         $builder->where("dtr.time_out IS NOT NULL");

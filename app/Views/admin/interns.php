@@ -29,8 +29,8 @@
                             <td><?= $ledger_detail['school']?></td>
                             <td><?= $ledger_detail['start_date']?></td>
                             <td><?= $ledger_detail['total_hours']?></td>
-                            <td><?= $ledger_detail['rendered_hours']?></td>
-                            <td><?= $ledger_detail['total_hours'] - $ledger_detail['rendered_hours']?></td>
+                            <td><?= $ledger_detail['rendered_hours'] - $ledger_detail['dtr_count']?></td>
+                            <td><?= $ledger_detail['total_hours'] - $ledger_detail['rendered_hours'] + $ledger_detail['dtr_count']?></td>
                             <td><?= $ledger_detail['department']?></td>
                             <td>
                                 <?php if($ledger_detail['is_active'] == 1){?>
