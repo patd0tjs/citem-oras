@@ -66,4 +66,20 @@ class LoggerController extends BaseController
 
         echo $this->request->getPost('task');
     }
+
+    public function saveDraft()
+    {
+        $session = session();
+        $json = $this->request->getJSON();
+        $content = $json->content ?? '';
+
+        $dtr = new DTRModel();
+
+        $dtr->where('user_id', $session->intern_id)
+            ->where('date', date('Y-m-d'))
+            ->set(['draft' => $content])
+            ->update();
+
+        return $this->response->setJSON(['status' => 'success']);
+    }
 }

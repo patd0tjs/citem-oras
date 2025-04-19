@@ -15,6 +15,7 @@ $routes->post('/logger/time_in', 'LoggerController::clockIn', ['filter' => 'inte
 $routes->post('/logger/time_out', 'LoggerController::clockOut', ['filter' => 'intern']);
 $routes->get('/logout', 'LoginController::internLogout', ['filter' => 'intern']);
 $routes->get('/timelogs', 'DTRController::internTimelogs', ['filter' => 'intern']);
+$routes->post('/saveDraft', 'LoggerController::saveDraft');
 
 // admin routes
 $routes->get('admin', 'DTRController::timelogsPage', ['filter' => 'user']);

@@ -9,7 +9,7 @@ class DTRModel extends Model
     protected $table = 'dtr';
     protected $primaryKey = 'id';
     protected $allowedFields = [
-        'user_id', 'date', 'time_in', 'time_out', 'task', 'last_updated_by'
+        'user_id', 'date', 'time_in', 'time_out', 'task', 'last_updated_by', 'draft'
     ];
 
     public function getTimelogs()

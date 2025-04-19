@@ -16,8 +16,9 @@
                         <input type="submit" class="btn btn-success" value="Time In">
                     <?php } else { ?> 
                         <div class="form-group">
-                            <textarea class="form-control mb-3" name="task" rows="3" required placeholder="Please enter your task for today"></textarea>
+                            <textarea class="form-control mb-3" id="draftArea" name="task" rows="3" required placeholder="Please enter your task for today"><?= $dtr['draft']?></textarea>
                         </div>
+                        <div id="saveStatus" class="text-muted small mb-3"></div>
                         <input type="submit" class="btn btn-danger" value="Time Out">
                     <?php } ?>
                 </form>
@@ -42,6 +43,30 @@
         
         setInterval(updateClock, 1000);
         updateClock();
+
+        $(document).ready(function () {
+            $('#draftArea').on('keyup', function () {
+                var content = $(this).val();
+                $('#saveStatus').text('Saving draft...');
+
+                $.ajax({
+                    url: '<?= base_url() ?>saveDraft',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ content: content }),
+                    success: function (response) {
+                        if (response.status === 'success') {
+                            $('#saveStatus').text('Draft saved!');
+                        } else {
+                            $('#saveStatus').text('Failed to save draft.');
+                        }
+                    },
+                    error: function () {
+                        $('#saveStatus').text('Error saving draft.');
+                    }
+                });
+            });
+        });
     </script>
 
 <?= $this->endSection() ?>
