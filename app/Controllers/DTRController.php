@@ -30,6 +30,19 @@ class DTRController extends BaseController
 
         return view('admin/accumulated', $data);
     }
+
+    public function internAccumulatedHoursPage()
+    {
+        $dtr = new DTRModel();
+        $hours = $dtr->getAccumulatedHours();
+
+        $data = [
+            'page'  => 'Accumulated Hours',
+            'hours' => $hours
+        ];
+
+        return view('admin/accumulated', $data);
+    }
     
     public function updateTimelog()
     {
@@ -46,5 +59,21 @@ class DTRController extends BaseController
             ->update();
 
         return redirect()->to('admin');
+    }
+
+    public function internTimelogs()
+    {
+        $dtr = new DTRModel();
+        $session = session();
+
+        $timelogs = $dtr->where('user_id', $session->intern_id)->findAll();;
+
+        $data = [
+            'page'        => 'Timelogs',
+            'timelogs'    => $timelogs,
+            'intern_name' => $session->intern_name, 
+        ];
+
+        return view('timelogs', $data);
     }
 }

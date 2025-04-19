@@ -20,8 +20,15 @@ class LoggerController extends BaseController
                            ->first();
 
         $current_dtr = (array) $current_dtr;
+
+        $data = [
+            'dtr' => $current_dtr, 
+            'intern_name' => $session->intern_name, 
+            'hours' => $hours, 
+            'page' => 'Time Logger'
+        ];
         
-        return view('logger', ['dtr' => $current_dtr, 'intern_name' => $session->intern_name, 'hours' => $hours]);
+        return view('logger', $data);
     }
 
     public function clockIn()
