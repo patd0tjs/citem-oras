@@ -67,9 +67,9 @@
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label class="form-label">Photo *</label>
+                            <label class="form-label">Photo</label>
                             <br>
-                            <input type="file" class="form-label" name="img" accept="image/*" required>
+                            <input type="file" class="form-label" name="img" accept="image/*">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Name *</label>

@@ -89,7 +89,7 @@ class UsersController extends BaseController
         $file = $this->request->getFile('img');
         $img = $intern->uploadIMG($file);
         if(!$img){
-            return redirect()->back()->with('error', 'There was an error uploading the image');
+            $img = null;
         }
 
         $data = [
