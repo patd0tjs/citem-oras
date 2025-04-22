@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2025 at 08:16 AM
+-- Generation Time: Apr 22, 2025 at 02:09 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -51,7 +51,7 @@ CREATE TABLE `interns` (
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `pw` varchar(255) NOT NULL,
-  `img` varchar(255) NOT NULL,
+  `img` varchar(255) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `school_id` smallint(5) UNSIGNED NOT NULL,
   `course` varchar(255) NOT NULL,
