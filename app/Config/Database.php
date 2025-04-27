@@ -22,7 +22,7 @@ class Database extends Config
 
         $this->default = [
             'DSN'          => '',
-            'hostname'     => getenv('database.default.hostname') ?: 'localhost',
+            'hostname'     => getenv('database.default.hostname') ?: 'db',
             'username'     => getenv('database.default.username') ?: 'root',
             'password'     => getenv('database.default.password') ?: '',
             'database'     => getenv('database.default.database') ?: 'oras',
@@ -37,7 +37,7 @@ class Database extends Config
             'compress'     => false,
             'strictOn'     => false,
             'failover'     => [],
-            'port'         => getenv('database.default.port') ?: 3306,
+            'port'         => (int) getenv('database.default.port') ?: 3306,
             'numberNative' => false,
             'dateFormat'   => [
                 'date'     => 'Y-m-d',

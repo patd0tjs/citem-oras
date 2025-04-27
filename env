@@ -52,7 +52,7 @@ CI_ENVIRONMENT = development
 
 #--------------------------------------------------------------------
 
-database.default.hostname = localhost
+database.default.hostname = db
 database.default.database = oras
 database.default.username = root
 database.default.password =
